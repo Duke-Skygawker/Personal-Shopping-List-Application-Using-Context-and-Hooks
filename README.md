@@ -1,3 +1,8 @@
+## Chapter 5, Build a Personal Shopping List Application Using Context and Hooks,
+
+will show you how to use the React context API with Hooks to handle the data flow throughout the application. We will create a personal shopping list to see how data can be accessed and
+changed from parent to child components and vice versa with Hooks and the context API.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
