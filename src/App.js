@@ -2,7 +2,7 @@ import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { ListsContextProvider } from "./context/ListsContext";
-import { ItemsContext, ItemsContextProvider } from "./context/ItemsContext";
+import { ItemsContextProvider } from "./context/ItemsContext";
 import Header from "./components/Header/Header";
 import Lists from "./pages/Lists";
 import ListDetail from "./pages/ListDetail";
