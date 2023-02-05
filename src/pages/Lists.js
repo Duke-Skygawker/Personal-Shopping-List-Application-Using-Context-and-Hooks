@@ -31,7 +31,7 @@ const Title = styled.h3`
 const Lists = () => {
   let navigate = useNavigate();
 
-  const [loading, error, lists] = useContext(ListsContext);
+  const { loading, error, lists } = useContext(ListsContext);
 
   return (
     <>
