@@ -1,4 +1,3 @@
-import React from "react";
 import { Suspense, lazy } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import { Route, Routes, BrowserRouter } from "react-router-dom";

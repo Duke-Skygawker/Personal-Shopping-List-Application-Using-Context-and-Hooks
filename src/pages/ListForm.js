@@ -59,6 +59,8 @@ function ListForm() {
             label="Quantity"
             type="number"
             placeholder="0"
+            value={quantity}
+            handleOnChange={(e) => setQuantity(e.currentTarget.value)}
           />
           <FormItem
             id="price"

@@ -1,4 +1,5 @@
 import { createContext, useCallback, useReducer } from "react";
+
 export const ItemsContext = createContext();
 
 const initialState = {
@@ -12,7 +13,7 @@ const reducer = (state, action) => {
     case "GET_ITEMS_SUCCESS":
       return {
         ...state,
-        items: [...state.items, action.payload],
+        items: action.payload,
         loading: false,
       };
     case "GET_ITEMS_ERROR":
@@ -21,6 +22,12 @@ const reducer = (state, action) => {
         items: [],
         loading: false,
         error: action.payload,
+      };
+    case "ADD_ITEM_SUCCESS":
+      return {
+        ...state,
+        items: [...state.items, action.payload],
+        loading: false,
       };
     default:
       return state;
@@ -50,6 +57,7 @@ export const ItemsContextProvider = ({ children }) => {
 
   const addItem = useCallback(async ({ listId, title, quantity, price }) => {
     const itemId = Math.floor(Math.random() * 100);
+
     try {
       const data = await fetch(
         `https://my-json-server.typicode.com/PacktPublishing/React-Projects-Second-Edition/items`,
@@ -66,6 +74,7 @@ export const ItemsContextProvider = ({ children }) => {
         }
       );
       const result = await data.json();
+
       if (result) {
         dispatch({
           type: "ADD_ITEM_SUCCESS",
